@@ -16,7 +16,7 @@ export default function Home() {
         <div className="flex items-center justify-between px-4 h-12">
           <nav>
             <Link className="group flex items-center gap-4" to={"/"}>
-              <div className="flex items-center justify-center size-8 bg-accent transition-colors rounded shadow group-hover:bg-interactive">
+              <div className="flex items-center justify-center size-8 bg-accent transition rounded shadow group-hover:shadow-none">
                 <TerminalIcon strokeWidth="3" />
               </div>
               jenia.codes
