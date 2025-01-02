@@ -37,8 +37,9 @@ export default {
       },
 
       fontFamily: {
+        heading: ['"Darker Grotesque"'],
         sans: [
-          '"Inter"',
+          '"Cabin"',
           "ui-sans-serif",
           "system-ui",
           "sans-serif",
