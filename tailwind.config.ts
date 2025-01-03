@@ -37,7 +37,7 @@ export default {
       },
 
       fontFamily: {
-        heading: ['"Darker Grotesque"'],
+        title: ['"Oswald"'],
         sans: [
           '"Cabin"',
           "ui-sans-serif",
