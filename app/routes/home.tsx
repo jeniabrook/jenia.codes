@@ -40,7 +40,7 @@ export default function Home() {
             </h3>
           </div>
           <div className="group place-self-center grid p-9">
-            <div className="col-start-1 z-[3] row-start-1 transition-all duration-200 rotate-12 origin-bottom-right size-52 bg-accent rounded-md shadow group-hover:rotate-0">
+            <div className="flex justify-center items-center col-start-1 z-[3] row-start-1 transition-all duration-200 rotate-12 origin-bottom-right size-52 bg-accent rounded-md shadow group-hover:rotate-0">
               <img
                 className="size-48 rounded-md grayscale group-hover:grayscale-0 transition-all duration-200"
                 src="/me.jpg"
