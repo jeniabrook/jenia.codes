@@ -1,4 +1,5 @@
 import type { Route } from "./+types/home";
+import { Tag } from "../components/ui/tag";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -21,15 +22,15 @@ export default function Home() {
             <h1 className="font-title font-bold text-6xl md:text-8xl lg:text-9xl leading-none">
               I HAVE A <span className="text-main">KEYBOARD</span>.
             </h1>
-            <h2 className="text-2xl md:text-4xl font-semibold max-w-4xl mx-auto leading-relaxed">
+            <h2 className="text-2xl md:text-4xl font-semibold max-w-4xl mx-auto">
               I'm a{" "}
-              <span className="bg-accent px-3 py-2 rounded-lg shadow whitespace-nowrap">
+              <Tag variant="accent" size="inherit">
                 frontend engineer
-              </span>{" "}
+              </Tag>{" "}
               , and I{" "}
-              <span className="bg-interactive px-3 py-2 rounded-lg shadow whitespace-nowrap">
+              <Tag variant="interactive" size="inherit">
                 move pixels
-              </span>{" "}
+              </Tag>{" "}
               .
             </h2>
           </div>
