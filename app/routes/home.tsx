@@ -20,13 +20,19 @@ export default function Home() {
           <h2 className="text-2xl md:text-4xl font-semibold max-w-4xl mx-auto">
             I'm a{" "}
             <Tag variant="accent" size="inherit" className="mb-1">
-              frontend engineer
+              frontend engineer,
             </Tag>{" "}
-            , and I{" "}
-            <Tag variant="interactive" size="inherit">
+            and I{" "}
+            <Tag
+              variant="interactive"
+              size="inherit"
+              className="group hover:text-main transition-colors"
+            >
               move pixels
-            </Tag>{" "}
-            .
+              <span className="group-hover:text-accent transition-colors">
+                .
+              </span>
+            </Tag>
           </h2>
         </div>
       </div>
