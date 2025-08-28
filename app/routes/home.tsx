@@ -19,7 +19,7 @@ export default function Home() {
           </h1>
           <h2 className="text-2xl md:text-4xl font-semibold max-w-4xl mx-auto">
             I'm a{" "}
-            <Tag variant="accent" size="inherit">
+            <Tag variant="accent" size="inherit" className="mb-1">
               frontend engineer
             </Tag>{" "}
             , and I{" "}
