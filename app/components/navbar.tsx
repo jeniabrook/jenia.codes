@@ -14,9 +14,6 @@ export function Navbar() {
         </Link>
         <div className="flex gap-6">
           <Link to={"/about"}>about</Link>
-          <Link className="hidden" to={"/experience"}>
-            experience
-          </Link>
         </div>
       </nav>
     </header>
