@@ -20,7 +20,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function About() {
   return (
-    <div className="min-h-[calc(100vh-3.5rem)] py-16 px-4 md:py-24">
+    <div className="min-h-[calc(100vh-3.5rem)] py-16 md:py-24">
       <div className="max-w-4xl mx-auto">
         <h1 className="font-title font-bold text-4xl md:text-6xl lg:text-7xl text-left mb-12 md:mb-16">
           ABOUT
