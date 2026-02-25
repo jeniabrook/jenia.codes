@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
+import { Footer } from "./components/footer";
 import { Navbar } from "./components/navbar";
 
 export const links: Route.LinksFunction = () => [
@@ -50,6 +51,7 @@ export default function App() {
       <main className="container mx-auto px-4 flex flex-col flex-1">
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 }

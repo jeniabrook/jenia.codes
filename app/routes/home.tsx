@@ -10,7 +10,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <section className="flex items-center justify-center text-center h-[calc(100vh-3.5rem)]">
+    <section className="flex items-center justify-center text-center h-[calc(100svh-3.5rem)]">
       <div className="max-w-5xl mx-auto">
         <div className="space-y-8">
           <h3 className="text-2xl w-fit mx-auto">Hi, my name is Jenia.</h3>
