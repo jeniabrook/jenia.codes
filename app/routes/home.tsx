@@ -39,25 +39,25 @@ const CARDS = [
     Icon: Grid,
     tint: "bg-main",
     title: "Design systems",
-    body: "I own and evolve the design system — components, tokens, and the pipeline that keeps design and code telling the same story.",
+    body: "I own our design systems — the components and tokens every product is built from, and the work of keeping design and code in step.",
   },
   {
     Icon: Layers,
     tint: "bg-interactive",
     title: "Architecture",
-    body: "Monorepo design, shared infrastructure and frontend standards across web and mobile. Built to still make sense in three years.",
+    body: "Monorepo design, shared infrastructure, and the frontend standards our web and mobile apps are built on.",
   },
   {
     Icon: Terminal,
     tint: "bg-bg",
-    title: "Agents that ship",
-    body: "I build the agents that build our software — wired into Linear, Figma and Sentry, taught our conventions, and held to them. The interesting work is the harness, not the prompt.",
+    title: "Agent tooling",
+    body: "The context, conventions and guardrails that make agents useful on a real codebase — not on a demo.",
   },
   {
     Icon: Users,
     tint: "bg-[var(--bg-secondary)]",
     title: "The team",
-    body: "A frontend guild that actually meets, architecture discussions, and interviews where I tell every candidate to bring their AI.",
+    body: "Guild sessions, architecture discussions, interviews. A good part of the job is helping other people build well.",
   },
 ];
 
