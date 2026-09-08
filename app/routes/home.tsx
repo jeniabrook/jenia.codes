@@ -39,7 +39,7 @@ const CARDS = [
     Icon: Grid,
     tint: "bg-main",
     title: "Design systems",
-    body: "I own our design systems — the components and tokens every product is built from, and the work of keeping design and code in step.",
+    body: "I own design systems — the components and tokens every product is built from, and the work of keeping design and code in step.",
   },
   {
     Icon: Layers,
