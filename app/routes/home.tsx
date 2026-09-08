@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Link } from "react-router";
 import { ArrowRight, GitHub, Grid, Layers, Linkedin, Mail, Terminal, Users } from "react-feather";
 import type { Route } from "./+types/home";
@@ -11,8 +12,15 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-const TICKER =
-  "head of frontend / design systems / monorepo architecture / agents that ship / react / typescript / frontend since 2017 /";
+const TICKER_PHRASES = [
+  "head of frontend",
+  "design systems",
+  "monorepo architecture",
+  "agents that ship",
+  "react",
+  "typescript",
+  "frontend since 2017",
+];
 
 const KEYCAPS = [
   { letter: "K", face: "bg" },
@@ -58,18 +66,36 @@ const ELSEWHERE = [
   { Icon: Mail, label: "jeniabrook@gmail.com", href: "mailto:jeniabrook@gmail.com" },
 ];
 
+/**
+ * Each copy is sized by its own content (`w-max` track, `shrink-0` copies) —
+ * pinning them to a fraction of the viewport makes the nowrap text overlap on
+ * narrow screens and leave a gap on wide ones. Four copies with a one-copy
+ * shift keeps the loop seamless well past any realistic monitor width.
+ */
+function TickerCopy({ hidden }: { hidden?: boolean }) {
+  return (
+    <div
+      aria-hidden={hidden || undefined}
+      className="flex shrink-0 items-center gap-5 pr-5 font-mono text-[11px] tracking-[0.18em] whitespace-nowrap text-bg uppercase md:gap-6 md:pr-6 md:text-[13px]"
+    >
+      {TICKER_PHRASES.map((phrase) => (
+        <Fragment key={phrase}>
+          <span>{phrase}</span>
+          <span aria-hidden className="text-main">
+            /
+          </span>
+        </Fragment>
+      ))}
+    </div>
+  );
+}
+
 function Ticker() {
   return (
     <div className="relative z-10 flex h-9 items-center overflow-hidden border-b border-border bg-blank md:h-11">
-      <div className="flex w-[200%] animate-marquee">
-        {[0, 1].map((i) => (
-          <span
-            key={i}
-            aria-hidden={i === 1}
-            className="w-1/2 shrink-0 font-mono text-[11px] tracking-[0.18em] whitespace-nowrap text-bg uppercase md:text-[13px]"
-          >
-            {TICKER}&nbsp;&nbsp;
-          </span>
+      <div className="flex w-max animate-marquee">
+        {[0, 1, 2, 3].map((i) => (
+          <TickerCopy key={i} hidden={i > 0} />
         ))}
       </div>
     </div>
@@ -171,7 +197,7 @@ export default function Home() {
 
       {/* ELSEWHERE */}
       <section className="flex flex-1 items-center border-b border-border bg-main py-10 md:py-[56px]">
-        <div className="container mx-auto flex w-full flex-col gap-6 px-4 md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-10">
+        <div className="container mx-auto flex w-full flex-col gap-6 px-4 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-10">
           <div>
             <div className="mb-3 animate-rise-sm [animation-delay:790ms] font-mono text-[11px] tracking-[0.16em] uppercase">
               elsewhere
