@@ -24,6 +24,12 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Cabin:wght@400..700&family=Oswald:wght@200..700&display=swap",
   },
   { rel: "stylesheet", href: stylesheet },
+  // Scrapers take the favicon from these, never from og:image. Slack shows it
+  // beside the site name; Google Search wants an explicit tag and prefers >48px,
+  // which the 16/32-only .ico cannot satisfy on its own.
+  { rel: "icon", href: "/favicon.ico", sizes: "32x32" },
+  { rel: "icon", type: "image/png", href: "/icon-96.png", sizes: "96x96" },
+  { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -32,6 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ff97c2" />
         <Meta />
         <Links />
       </head>

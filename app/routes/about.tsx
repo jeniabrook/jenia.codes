@@ -1,5 +1,6 @@
 import { ArrowDown } from "react-feather";
 import type { Route } from "./+types/about";
+import { canonical, seo } from "../seo";
 import { PixelPhoto } from "../components/ui/pixel-photo";
 import {
   Timeline,
@@ -10,15 +11,17 @@ import {
   TimelineItem,
 } from "../components/ui/timeline";
 
+export function links() {
+  return [canonical("/about")];
+}
+
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "About - Jenia Brook" },
-    {
-      name: "description",
-      content:
-        "Frontend engineer passionate about creating meaningful user experiences.",
-    },
-  ];
+  return seo({
+    title: "About - Jenia Brook",
+    description:
+      "Frontend engineer living in the sweet spot between engineering and design. Head of frontend at Flare, shipping since 2017.",
+    path: "/about",
+  });
 }
 
 const OFF_SCREEN = [

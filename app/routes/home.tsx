@@ -2,14 +2,21 @@ import { Fragment } from "react";
 import { Link } from "react-router";
 import { ArrowRight, GitHub, Grid, Layers, Linkedin, Mail, Terminal, Users } from "react-feather";
 import type { Route } from "./+types/home";
+import { canonical, seo } from "../seo";
 import { Tag } from "../components/ui/tag";
 import { Keycap, KeycapPeriod } from "../components/ui/keycap";
 
+export function links() {
+  return [canonical("/")];
+}
+
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Jenia Brook - Frontend Engineer" },
-    { name: "description", content: "I have a keyboard. I move pixels." },
-  ];
+  return seo({
+    title: "Jenia Brook - Frontend Engineer",
+    description:
+      "Head of frontend at Flare. Design systems, frontend architecture, and the tooling that makes agents useful on a real codebase.",
+    path: "/",
+  });
 }
 
 const TICKER_PHRASES = [
