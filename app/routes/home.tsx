@@ -16,11 +16,12 @@ const TICKER_PHRASES = [
   "head of frontend",
   "design systems",
   "monorepo architecture",
-  "agents that ship",
   "react",
   "typescript",
-  "frontend since 2017",
 ];
+
+/** Copies in the marquee track. Must match the -16.6667% shift in @keyframes marquee. */
+const TICKER_COPIES = 6;
 
 const KEYCAPS = [
   { letter: "K", face: "bg" },
@@ -69,8 +70,8 @@ const ELSEWHERE = [
 /**
  * Each copy is sized by its own content (`w-max` track, `shrink-0` copies) —
  * pinning them to a fraction of the viewport makes the nowrap text overlap on
- * narrow screens and leave a gap on wide ones. Four copies with a one-copy
- * shift keeps the loop seamless well past any realistic monitor width.
+ * narrow screens and leave a gap on wide ones. Six copies with a one-copy
+ * shift keep the loop seamless past ~3500px of viewport.
  */
 function TickerCopy({ hidden }: { hidden?: boolean }) {
   return (
@@ -94,7 +95,7 @@ function Ticker() {
   return (
     <div className="relative z-10 flex h-9 items-center overflow-hidden border-b border-border bg-blank md:h-11">
       <div className="flex w-max animate-marquee">
-        {[0, 1, 2, 3].map((i) => (
+        {Array.from({ length: TICKER_COPIES }, (_, i) => (
           <TickerCopy key={i} hidden={i > 0} />
         ))}
       </div>

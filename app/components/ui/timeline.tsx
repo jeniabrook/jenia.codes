@@ -23,41 +23,50 @@ const Timeline = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
 );
 Timeline.displayName = "Timeline";
 
-const accentBg = {
-  main: "bg-main",
-  accent: "bg-accent",
-  interactive: "bg-interactive",
-  blank: "bg-blank",
+/*
+ * The spine is drawn with pseudo-elements: ::before is the rail, ::after is
+ * the tick. ::after always paints over ::before, so the rail can run straight
+ * through unbroken and the tick covers the crossing — no gap arithmetic to
+ * drift, and no chance of the line painting across the marker.
+ *
+ * Gutter maths (row content starts at x=172): rail is 4px centred on 132.5,
+ * tick is 16px — border-box, so borders are inside — centred on the same axis.
+ */
+const tickTint = {
+  main: "md:after:bg-main",
+  accent: "md:after:bg-accent",
+  interactive: "md:after:bg-interactive",
+  blank: "md:after:bg-blank",
 } as const;
 
-type Accent = keyof typeof accentBg;
+const TICK =
+  "md:after:absolute md:after:top-[18px] md:after:left-[-47.5px] md:after:size-4 md:after:animate-pop md:after:rounded-[2px] md:after:border-2 md:after:border-border md:after:[animation-delay:var(--spine-delay)] md:after:content-['']";
+
+const RAIL =
+  "md:before:absolute md:before:top-[26px] md:before:bottom-[-74px] md:before:left-[-41.5px] md:before:w-1 md:before:origin-top md:before:animate-wipe-y md:before:bg-border md:before:[animation-delay:var(--spine-delay)] md:before:content-['']";
+
+type Accent = keyof typeof tickTint;
 
 interface TimelineItemProps extends React.HTMLAttributes<HTMLDivElement> {
   year: string;
   accent?: Accent;
   /** The last item terminates the line instead of bridging to the next. */
   last?: boolean;
+  /** Staggers the rail draw and tick pop, e.g. "240ms". */
+  spineDelay?: string;
 }
 
 const TimelineItem = React.forwardRef<HTMLDivElement, TimelineItemProps>(
-  ({ className, year, accent = "main", last = false, children, ...props }, ref) => (
-    <div ref={ref} className={cn("relative", !last && "mb-12", className)} {...props}>
+  ({ className, year, accent = "main", last = false, spineDelay, children, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn("relative", !last && "mb-12", TICK, tickTint[accent], !last && RAIL, className)}
+      style={{ "--spine-delay": spineDelay ?? "0ms" } as React.CSSProperties}
+      {...props}
+    >
       <div className="mb-3.5 animate-rise font-title text-[34px] leading-none font-bold tracking-[-0.02em] md:absolute md:top-0 md:left-[-172px] md:mb-0 md:w-[115px] md:text-right md:text-5xl">
         {year}
       </div>
-      <span
-        aria-hidden
-        className={cn(
-          "hidden animate-pop rounded-[2px] border-2 border-border md:absolute md:top-[17px] md:left-[-48.5px] md:block md:size-3.5",
-          accentBg[accent]
-        )}
-      />
-      {!last && (
-        <span
-          aria-hidden
-          className="hidden w-[3px] animate-wipe-y bg-border md:absolute md:top-[35px] md:bottom-[-65px] md:left-[-41px] md:block"
-        />
-      )}
       {children}
     </div>
   )

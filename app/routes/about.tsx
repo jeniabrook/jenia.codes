@@ -140,7 +140,7 @@ export default function About() {
 
         <div className="relative container mx-auto px-4 pt-8 pb-10 md:pt-14 md:pb-[76px]">
           <Timeline>
-            <TimelineItem year="2022" accent="main">
+            <TimelineItem spineDelay="240ms" year="2022" accent="main">
               <TimelineCard
                 accent="main"
                 company="Flare"
@@ -181,7 +181,7 @@ export default function About() {
               </TimelineCard>
             </TimelineItem>
 
-            <TimelineItem year="2018" accent="accent">
+            <TimelineItem spineDelay="480ms" year="2018" accent="accent">
               <TimelineCard
                 accent="accent"
                 company="Healthy.io"
@@ -217,7 +217,7 @@ export default function About() {
               </TimelineCard>
             </TimelineItem>
 
-            <TimelineItem year="2017" accent="interactive">
+            <TimelineItem spineDelay="720ms" year="2017" accent="interactive">
               <TimelineCard
                 accent="interactive"
                 company="Headstart"
@@ -244,7 +244,7 @@ export default function About() {
               </TimelineCard>
             </TimelineItem>
 
-            <TimelineItem year="2012" accent="blank" last>
+            <TimelineItem spineDelay="900ms" year="2012" accent="blank" last>
               <TimelineAside
                 label="before frontend"
                 note="where the testing habits came from"

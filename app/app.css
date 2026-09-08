@@ -71,10 +71,10 @@
   @keyframes wipe-y {
     from { transform: scaleY(0); }
   }
-  /* Shifts by exactly one copy of the ticker's four-copy track. */
+  /* Shifts by exactly one copy of the ticker's six-copy track. */
   @keyframes marquee {
     from { transform: translateX(0); }
-    to { transform: translateX(-25%); }
+    to { transform: translateX(-16.6667%); }
   }
 }
 
