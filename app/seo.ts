@@ -16,7 +16,7 @@ export const SITE_NAME = "Jenia Brook";
 
 const OG_IMAGE = `${SITE_URL}/og.png`;
 const OG_IMAGE_ALT =
-  "I have a keyboard — the word KEYBOARD spelled out in keycaps. Jenia Brook, head of frontend at Flare.";
+  "I have a keyboard — the word KEYBOARD spelled out in keycaps. Jenia Brook, frontend engineer.";
 
 /**
  * Canonical <link> for a route. Link tags belong to the `links` export —

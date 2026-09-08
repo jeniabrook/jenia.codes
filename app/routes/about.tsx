@@ -19,7 +19,7 @@ export function meta({}: Route.MetaArgs) {
   return seo({
     title: "About - Jenia Brook",
     description:
-      "Frontend engineer living in the sweet spot between engineering and design. Head of frontend at Flare, shipping since 2017.",
+      "Frontend engineer living in the sweet spot between engineering and design. Head of frontend, shipping since 2017.",
     path: "/about",
   });
 }

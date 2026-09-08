@@ -14,7 +14,7 @@ export function meta({}: Route.MetaArgs) {
   return seo({
     title: "Jenia Brook - Frontend Engineer",
     description:
-      "Head of frontend at Flare. Design systems, frontend architecture, and the tooling that makes agents useful on a real codebase.",
+      "Head of frontend. Design systems, frontend architecture, and the tooling that makes agents useful on a real codebase.",
     path: "/",
   });
 }
