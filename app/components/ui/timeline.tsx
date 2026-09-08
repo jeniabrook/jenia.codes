@@ -156,7 +156,7 @@ function TimelineClimb({ steps }: { steps: ClimbStep[] }) {
         <span
           key={title}
           className={cn(
-            "flex animate-pop items-baseline justify-between gap-2.5 rounded border border-border px-3 py-2.5 shadow-hard md:flex-col md:items-start md:gap-[3px]",
+            "flex animate-pop flex-col items-start gap-[3px] rounded border border-border px-3 py-2.5 shadow-hard",
             current ? "bg-main" : "bg-bw"
           )}
         >
