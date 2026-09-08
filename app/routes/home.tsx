@@ -203,7 +203,7 @@ export default function Home() {
             <div className="mb-3 animate-rise-sm [animation-delay:790ms] font-mono text-[11px] tracking-[0.16em] uppercase">
               elsewhere
             </div>
-            <h2 className="max-w-[560px] animate-rise-sm [animation-delay:810ms] font-title text-[34px] leading-[1.05] font-bold tracking-[-0.02em] text-pretty uppercase md:text-[40px]">
+            <h2 className="max-w-[560px] animate-rise-sm [animation-delay:810ms] font-title text-[34px] leading-[1.05] font-bold tracking-[-0.02em] uppercase md:text-[40px]">
               Find me in the usual places.
             </h2>
           </div>

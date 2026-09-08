@@ -74,7 +74,7 @@ export default function About() {
               the long version
             </span>
           </div>
-          <div className="flex flex-col gap-5 text-[17px] leading-[1.65] text-pretty md:gap-6.5 md:text-xl">
+          <div className="flex flex-col gap-5 text-[17px] leading-[1.65] md:gap-6.5 md:text-xl">
             <p className="animate-rise-sm [animation-delay:300ms]">
               I'm currently building innovative products at{" "}
               <strong className="rounded bg-accent px-1.5 py-px font-bold">Flare</strong>,

@@ -134,7 +134,7 @@ const TimelineBody = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLD
     <div
       ref={ref}
       className={cn(
-        "flex flex-col gap-4 text-base leading-[1.65] text-pretty md:gap-5 md:text-lg md:leading-[1.7]",
+        "flex flex-col gap-4 text-base leading-[1.65] md:gap-5 md:text-lg md:leading-[1.7]",
         className
       )}
       {...props}

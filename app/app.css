@@ -115,6 +115,29 @@ body {
   @apply bg-bg;
 }
 
+/*
+  No orphans. Card copy and any body text avoids leaving a single word
+  stranded on the last line; titles balance their lines instead, which
+  suits short headings better than pretty does.
+*/
+@layer base {
+  p,
+  li,
+  blockquote,
+  figcaption {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+}
+
 :root {
   --overlay: rgba(0, 0, 0, 0.8);
   --main: #ff97c2;
