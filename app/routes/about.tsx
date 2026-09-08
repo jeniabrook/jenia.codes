@@ -211,7 +211,7 @@ export default function About() {
                 <TimelineClimb
                   steps={[
                     { title: "Frontend Engineer", date: "dec 2018" },
-                    { title: "Senior Frontend Engineer", date: "jan 2021 → nov 2022" },
+                    { title: "Senior Frontend Engineer", date: "jan 2021" },
                   ]}
                 />
               </TimelineCard>

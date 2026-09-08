@@ -55,7 +55,7 @@ const TimelineItem = React.forwardRef<HTMLDivElement, TimelineItemProps>(
       {!last && (
         <span
           aria-hidden
-          className="hidden w-[3px] animate-wipe-y bg-border md:absolute md:top-[26px] md:bottom-[-74px] md:left-[-41px] md:block"
+          className="hidden w-[3px] animate-wipe-y bg-border md:absolute md:top-[35px] md:bottom-[-65px] md:left-[-41px] md:block"
         />
       )}
       {children}
@@ -87,7 +87,7 @@ const TimelineCard = React.forwardRef<HTMLDivElement, TimelineCardProps>(
     <div
       ref={ref}
       className={cn(
-        "overflow-hidden rounded border border-border bg-bw shadow-hard-md transition-[transform,box-shadow] duration-[170ms] ease-press hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-hard hover:duration-[110ms]",
+        "overflow-hidden rounded border border-border bg-bw shadow-hard-md",
         className
       )}
       {...props}
