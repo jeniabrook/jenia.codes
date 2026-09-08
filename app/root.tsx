@@ -48,7 +48,7 @@ export default function App() {
   return (
     <div className="flex flex-col min-h-svh">
       <Navbar />
-      <main className="container mx-auto px-4 flex flex-col flex-1">
+      <main className="flex flex-col flex-1">
         <Outlet />
       </main>
       <Footer />

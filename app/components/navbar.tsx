@@ -1,8 +1,8 @@
 import { Link, NavLink } from "react-router";
 
 const navLinks = [
-  { to: "/", label: "home", end: true },
-  { to: "/about", label: "about" },
+  { to: "/", label: "cd ~", end: true },
+  { to: "/about", label: "whoami" },
 ];
 
 export function Navbar() {
@@ -19,7 +19,7 @@ export function Navbar() {
         <div className="flex gap-3">
           {navLinks.map(({ to, label, end }) => {
             const base =
-              "px-3 py-1 bg-bw text-text border border-border font-medium uppercase tracking-wide text-sm transition-all duration-150 ease-out";
+              "px-3 py-1 bg-bw text-text border border-border rounded font-medium tracking-[0.02em] text-sm transition-[transform,box-shadow] duration-[170ms] ease-press";
             return (
               <NavLink
                 key={to}
@@ -28,7 +28,7 @@ export function Navbar() {
                 className={({ isActive }) =>
                   isActive
                     ? `${base} translate-x-1 translate-y-1 shadow-none`
-                    : `${base} shadow translate-x-0 translate-y-0 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_var(--border)]`
+                    : `${base} shadow-hard hover:duration-[110ms] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_var(--border)]`
                 }
               >
                 {label}

@@ -30,6 +30,65 @@
   --font-title: 'Oswald';
   --font-sans: 'Cabin', ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  /* Hard-shadow scale. 4px is the app default; 6px for the raised layer
+     (keycaps, cards, buttons), 10px for deliberately lifted blocks. */
+  --shadow-hard: 4px 4px 0px 0px var(--border);
+  --shadow-hard-md: 6px 6px 0px 0px var(--border);
+  --shadow-hard-lg: 10px 10px 0px 0px var(--border);
+  --shadow-hard-main: 6px 6px 0px 0px var(--main);
+  --shadow-hard-bg: 6px 6px 0px 0px var(--bg);
+
+  /* Motion. Enter decelerates hard and never bounces; things that
+     physically land get a small overshoot. */
+  --ease-soft: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-pop: cubic-bezier(0.34, 1.32, 0.64, 1);
+  --ease-press: cubic-bezier(0.33, 1, 0.68, 1);
+
+  --animate-rise: rise 480ms var(--ease-soft) backwards;
+  --animate-rise-sm: rise-sm 340ms var(--ease-soft) backwards;
+  --animate-drop: drop 460ms var(--ease-pop) backwards;
+  --animate-pop: pop 380ms var(--ease-pop) backwards;
+  --animate-wipe-x: wipe-x 560ms var(--ease-soft) backwards;
+  --animate-wipe-y: wipe-y 820ms var(--ease-soft) backwards;
+  --animate-marquee: marquee 34s linear infinite;
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+  }
+  @keyframes rise-sm {
+    from { opacity: 0; transform: translateY(8px); }
+  }
+  @keyframes drop {
+    from { opacity: 0; transform: translateY(-18px) scale(0.94); }
+  }
+  @keyframes pop {
+    from { opacity: 0; transform: scale(0.8); }
+  }
+  @keyframes wipe-x {
+    from { transform: scaleX(0); }
+  }
+  @keyframes wipe-y {
+    from { transform: scaleY(0); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+/*
+  The hidden state of every entry animation lives only inside its
+  keyframes, so switching animations off leaves content visible rather
+  than stuck at opacity 0.
+*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 1ms !important;
+  }
 }
 
 /*
