@@ -140,9 +140,9 @@ export default function Home() {
             <KeycapPeriod className="animate-drop" style={{ animationDelay: "454ms" }} />
           </div>
 
-          <h2 className="mt-7 animate-rise [animation-delay:470ms] text-xl leading-[2] font-semibold md:mt-[46px] md:text-[34px] md:leading-[1.6]">
+          <h2 className="mt-7 animate-rise [animation-delay:470ms] text-xl leading-[2.4] font-semibold md:mt-[46px] md:text-[34px] md:leading-[1.9]">
             I'm a{" "}
-            <Tag variant="accent" size="inherit" className="mb-1">
+            <Tag variant="accent" size="inherit">
               frontend engineer,
             </Tag>{" "}
             and I{" "}
